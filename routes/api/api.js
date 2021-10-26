@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Exercise = require("../../models/exercise");
 
-router.get("/api/workouts", (req, res) => {
+router.get("/workouts", (req, res) => {
   Exercise.aggregate([
     {
       $addFields: {
@@ -16,7 +16,7 @@ router.get("/api/workouts", (req, res) => {
   });
 });
 
-router.put("/api/workouts:id", (req, res) => {
+router.put("/workouts:id", (req, res) => {
   Exercise.findOneAndUpdate(
     {_id: req.params.id},
     {$push: {exercises: req.body}},
@@ -28,7 +28,7 @@ router.put("/api/workouts:id", (req, res) => {
   })
 });
 
-router.post("/api/workouts", ({ body }, res) => {
+router.post("/workouts", ({ body }, res) => {
   Exercise.create(body)
     .then(dbExercise => {
       res.json(dbExercise);
