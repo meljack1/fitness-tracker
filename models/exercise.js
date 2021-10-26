@@ -11,11 +11,9 @@ const exerciseSchema = new Schema({
     {
       type: {
         type: String,
-        required: "Select an exercise type"
       },
       name: {
         type: String,
-        required: "Enter a name"
       },
       weight: {
         type: Number,
