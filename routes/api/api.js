@@ -38,5 +38,23 @@ router.post("/workouts", ({ body }, res) => {
     });
 });
 
+router.get("/workouts/range", (req, res) => {
+  Exercise.aggregate([
+    {
+      $addFields: {
+        totalDuration: { $sum: "$exercises.duration"},
+        totalWeight: {$sum: "$exercises.weight"},
+      },
+    }
+  ])
+  .sort({"day": -1 })
+  .limit(7)
+  .then(dbExercise => {
+    res.json(dbExercise);
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+});
 
 module.exports = router;
