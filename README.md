@@ -12,7 +12,7 @@
 A fitness tracker application built using Node.js with an Express.js server, and MongoDB using Mongoose. This was my first time using MongoDB and Mongoose to build a full application, and I was able to draw similarities and differences with MySQL and Sequelize. 
 
 ## Installation
-Navigate to ```./fitness-tracker``
+Navigate to ```./fitness-tracker```
 
 Run the following command from the terminal: 
 
