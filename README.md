@@ -28,7 +28,9 @@ To run the application on a local server, follow the following steps:
 2. Navigate to ```./fitness-tracker```
 
 3. Open a new terminal and run the following commands:
+
 ```npm run seed```
+
 ```npm start```
 
 Screenshots:
